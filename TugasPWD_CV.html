@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Harliana Sitanggang</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2f343a, #1b1e22);
+    background-image: url('Bintang.jpeg');
+    color: #cccace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 900px;
+    background: #1f2126;
+    border-radius: 24px;
+    padding: 4rem 3.5rem 4.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+    border: 1.8px solid #555a61;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 3.8rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInScale 1s ease forwards;
+  }
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #6d7580;
+    box-shadow: 0 0 30px #9299a3aa;
+    object-fit: cover;
+    animation: floaty 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px #8a8e93);
+    will-change: transform;
+  }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px);}
+  }
+  header h1 {
+    margin: 1.2rem 0 0.4rem;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 1.15px;
+    color: #d6d6d8;
+    text-shadow: 0 2px 6px #00000099;
+  }
+  header p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #a3a6ab;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    margin-top: 6px;
+    text-shadow: 0 1px 3px #00000077;
+  }
+  .social-links {
+    margin-top: 1.3rem;
+    position: relative;
+    z-index: 1;
+  }
+  .social-links a {
+    display: inline-block;
+    background: #565c66;
+    color: #d0d3d7;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 10px 28px;
+    margin: 0 14px 0 0;
+    border-radius: 28px;
+    box-shadow: 0 0 25px #51576155;
+    transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+    will-change: background, color, box-shadow;
+  }
+  .social-links a:hover,
+  .social-links a:focus {
+    background: #7a7f89;
+    color: #22252b;
+    box-shadow: 0 0 45px #7a7f89bb;
+    outline: none;
+  }
+
+  /* Biodata */
+  section.biodata {
+    background: #282c33;
+    border-radius: 20px;
+    padding: 2.6rem 3.4rem;
+    box-shadow: 0 12px 35px #00000080;
+    margin-bottom: 3.8rem;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 0.3s;
+  }
+  @keyframes fadeInUpSection {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  section.biodata h2 {
+    font-weight: 700;
+    color: #cccccc;
+    font-size: 2.3rem;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  section.biodata ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.4rem 0 0;
+  }
+  section.biodata ul li {
+    color: #bbbbbb;
+    font-weight: 600;
+    font-size: 1.22rem;
+    margin: 1rem 0;
+    display: flex;
+    gap: 1.1rem;
+    letter-spacing: 0.35px;
+  }
+  section.biodata ul li span.label {
+    color: #5f6570;
+    font-weight: 700;
+    min-width: 130px;
+    user-select: none;
+  }
+
+  /* Skills */
+  section.skills {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 0.7s;
+  }
+  section.skills h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #cccccc;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  .skill-circles {
+    margin-top: 2.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem 6.5rem;
+  }
+  .skill-circle {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    filter: drop-shadow(0 0 10px #333a44bb);
+    cursor: default;
+  }
+  .skill-circle svg {
+    width: 160px;
+    height: 160px;
+    transform: rotate(-90deg);
+  }
+  .skill-circle circle.bg {
+    fill: none;
+    stroke: #40464f;
+    stroke-width: 15;
+  }
+  .skill-circle circle.progress {
+    fill: none;
+    stroke-width: 15;
+    stroke-linecap: round;
+    stroke-dasharray: 439.8;
+    stroke-dashoffset: 439.8;
+    transition: stroke-dashoffset 3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 6px #616a7acc);
+    }
+    50% {
+      filter: drop-shadow(0 0 18px #8792a8ff);
+    }
+  }
+  .skill-circle.java circle.progress {
+    stroke: #7f8da8;
+  }
+  .skill-circle.python circle.progress {
+    stroke: #6c7b95;
+  }
+  .skill-circle.js circle.progress {
+    stroke: #586584;
+  }
+  .skill-circle.html circle.progress {
+    stroke: #93a0b5;
+  }
+  .skill-circle .skill-label {
+    position: absolute;
+    top: 46.5%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    color: #d7d8da;
+    font-weight: 700;
+    font-size: 1.3rem;
+    user-select: none;
+    letter-spacing: 0.7px;
+  }
+  .skill-circle .skill-percent {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a8abaf;
+    font-weight: 600;
+    font-size: 1.45rem;
+    letter-spacing: 0.5px;
+    user-select: none;
+  }
+
+  /* Portfolio */
+  section.portfolio {
+    margin-bottom: 3.8rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 1.1s;
+  }
+  section.portfolio h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #cccccc;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  .projects {
+    margin-top: 2.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.6rem;
+  }
+  .project-card {
+    background: #2c2f36;
+    border-radius: 22px;
+    padding: 2.2rem 2.7rem;
+    box-shadow: 0 10px 35px #0d0f13cc;
+    transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.42s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    color: #dddde0;
+    user-select: none;
+    will-change: transform, box-shadow;
+  }
+  .project-card:hover,
+  .project-card:focus-visible {
+    transform: translateY(-16px) rotateZ(0.3deg) scale(1.03);
+    box-shadow: 0 30px 70px #4c98ffe0;
+    outline: none;
+  }
+  .project-title {
+    color: #9db4d1;
+    font-weight: 800;
+    font-size: 1.48rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.55px;
+  }
+  .project-desc {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.58;
+  }
+  .project-link {
+    margin-top: 1.6rem;
+    align-self: flex-start;
+    font-weight: 700;
+    font-size: 1.12rem;
+    letter-spacing: 0.4px;
+    color: #87a0db;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.34s ease;
+  }
+  .project-link svg {
+    margin-left: 9px;
+    fill: #87a0db;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.32s ease;
+  }
+  .project-link:hover {
+    color: #a3bbff;
+  }
+  .project-link:hover svg {
+    transform: translateX(7px);
+  }
+
+  /* Pengalaman Kerja */
+  section.experience {
+    margin-bottom: 3.8rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 1.5s;
+  }
+  section.experience h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #cccccc;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  .experience-item {
+    margin-top: 2.8rem;
+    background: #292d34;
+    border-radius: 20px;
+    padding: 1.85rem 2.7rem;
+    box-shadow: 0 12px 28px #000000a0;
+  }
+  .exp-title {
+    font-weight: 700;
+    font-size: 1.32rem;
+    color: #a6afcb;
+    margin-bottom: 0.3rem;
+  }
+  .exp-duration {
+    font-style: italic;
+    color: #7e869a;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .exp-desc {
+    font-weight: 600;
+    color: #c1c6d3;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* Pendidikan */
+  section.education {
+    margin-bottom: 3.8rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 1.8s;
+  }
+  section.education h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #cccccc;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  ul.education-list {
+    margin-top: 2.5rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.8rem 4.8rem;
+  }
+  ul.education-list li {
+    font-weight: 600;
+    font-size: 1.14rem;
+    color: #8b8f9d;
+    padding-left: 1rem;
+    border-left: 4px solid #5a6370;
+    user-select: none;
+    min-width: 210px;
+  }
+
+  /* Kontak */
+  section.contact {
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpSection 1s ease forwards;
+    animation-delay: 2.0s;
+  }
+  section.contact h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #cccccc;
+    border-bottom: 3.5px solid #5a6370;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px #000000aa;
+  }
+  ul.contact-list {
+    padding: 0;
+    margin-top: 2.3rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.6rem 5.5rem;
+  }
+  ul.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: #9b9fa9;
+    font-size: 1.2rem;
+    user-select: none;
+    transition: color 0.35s ease;
+    cursor: default;
+  }
+  ul.contact-list li:hover,
+  ul.contact-list li:focus {
+    color: #c7cbd9;
+    outline: none;
+  }
+  ul.contact-list li svg {
+    width: 24px;
+    height: 24px;
+    fill: #5a6370;
+    transition: fill 0.35s ease;
+  }
+  ul.contact-list li:hover svg,
+  ul.contact-list li:focus svg {
+    fill: #a8afc4;
+  }
+
+  /* Scrollbar for container if needed */
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background: #667083aa;
+    border-radius: 12px;
+  }
+  .container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .container {
+      padding: 3rem 2rem 3rem;
+      max-width: 100%;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background: #25272b;
+    }
+    header h1 {
+      font-size: 2.4rem;
+    }
+    section.biodata,
+    section.skills,
+    section.portfolio,
+    section.experience,
+    section.education,
+    section.contact {
+      margin-bottom: 3rem;
+      padding: 2rem 1.2rem;
+      border-radius: 18px;
+    }
+    .skill-circles {
+      gap: 4rem 4.5rem;
+    }
+    .skill-circle {
+      width: 130px;
+      height: 130px;
+    }
+    .skill-circle svg {
+      width: 130px;
+      height: 130px;
+    }
+    .skill-circle .skill-label {
+      font-size: 1.1rem;
+    }
+    .skill-circle .skill-percent {
+      font-size: 1.2rem;
+    }
+    .project-card {
+      padding: 1.8rem 2rem;
+    }
+    ul.education-list {
+      flex-direction: column;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    ul.education-list li {
+      min-width: auto;
+      padding-left: 0.9rem;
+    }
+    ul.contact-list {
+      gap: 2.8rem 3.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" lang="id">
+    <header>
+      <img src="Harliana Sitanggang.jpeg" alt="Foto Profil Harliana Sitanggang" />
+      <h1>Harliana Sitanggang</h1>
+      <p>Mahasiswi Sistem Informasi</p>
+      <nav class="social-links" aria-label="Tautan Media Sosial">
+        <a href="https://instagram.com/Freshhiu" target="_blank" rel="noopener noreferrer" aria-label="Instagram Harliana Sitanggang">
+          @Freshhiu
+        </a>
+      </nav>
+    </header>
+
+    <section class="biodata" aria-labelledby="heading-biodata">
+      <h2 id="heading-biodata">📄 Biodata</h2>
+      <ul>
+        <li><span class="label">Nama Lengkap:</span> Harliana Sitanggang</li>
+        <li><span class="label">Alamat:</span> Jl. Bukit Barisan I, Glugur Darat Ii, Medan Timur</li>
+        <li><span class="label">Tempat, Tanggal Lahir:</span>P.Lunang, 10 Agustus 2005</li>
+        <li><span class="label">No. HP:</span> 085361070955</li>
+        <li><span class="label">Media Sosial:</span> @Freshhiu</li>
+      </ul>
+    </section>
+
+    <section class="skills" aria-labelledby="heading-skills">
+      <h2 id="heading-skills">💡 Skill</h2>
+      <div class="skill-circles" role="list">
+        <div class="skill-circle java" role="listitem" aria-label="Keahlian Java tingkat sembilan puluh dua persen">
+          <svg aria-hidden="true" viewBox="0 0 150 150">
+            <circle class="bg" cx="75" cy="75" r="70"></circle>
+            <circle class="progress" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="skill-label">Java</div>
+          <div class="skill-percent">92%</div>
+        </div>
+        <div class="skill-circle python" role="listitem" aria-label="Keahlian Python tingkat delapan puluh delapan persen">
+          <svg aria-hidden="true" viewBox="0 0 150 150">
+            <circle class="bg" cx="75" cy="75" r="70"></circle>
+            <circle class="progress" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="skill-label">Python</div>
+          <div class="skill-percent">88%</div>
+        </div>
+        <div class="skill-circle js" role="listitem" aria-label="Keahlian JavaScript tingkat delapan puluh tiga persen">
+          <svg aria-hidden="true" viewBox="0 0 150 150">
+            <circle class="bg" cx="75" cy="75" r="70"></circle>
+            <circle class="progress" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="skill-label">JavaScript</div>
+          <div class="skill-percent">83%</div>
+        </div>
+        <div class="skill-circle html" role="listitem" aria-label="Keahlian HTML tingkat sembilan puluh tujuh persen">
+          <svg aria-hidden="true" viewBox="0 0 150 150">
+            <circle class="bg" cx="75" cy="75" r="70"></circle>
+            <circle class="progress" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="skill-label">HTML</div>
+          <div class="skill-percent">97%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" aria-labelledby="heading-portfolio">
+      <h2 id="heading-portfolio">🧳 Portofolio</h2>
+      <div class="projects">
+        <article tabindex="0" class="project-card" role="article" aria-label="Proyek Aplikasi Enterprise Java Dinamis">
+          <h3 class="project-title">Aplikasi Enterprise Java Dinamis</h3>
+          <p class="project-desc">
+            Membangun aplikasi web Spring Boot Java yang skalabel dengan antarmuka responsif, integrasi REST API, serta manajemen data efisien memakai Hibernate.
+          </p>
+          <a href="#" class="project-link" aria-label="Lihat detail proyek Aplikasi Enterprise Java Dinamis">
+            Detail Proyek
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+        <article tabindex="0" class="project-card" role="article" aria-label="Proyek Toolkit Data Science Python">
+          <h3 class="project-title">Toolkit Data Science Python</h3>
+          <p class="project-desc">
+            Mengembangkan toolset analisis data interaktif menggunakan Pandas dan Matplotlib, menghasilkan visualisasi yang mudah dipahami serta insight bernilai.
+          </p>
+          <a href="#" class="project-link" aria-label="Lihat detail proyek Toolkit Data Science Python">
+            Detail Proyek
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+        <article tabindex="0" class="project-card" role="article" aria-label="Proyek Website Portofolio Interaktif">
+          <h3 class="project-title">Website Portofolio Interaktif</h3>
+          <p class="project-desc">
+            Merancang website portofolio modern dengan animasi halus dan desain custom, menampilkan keahlian serta proyek dengan tata letak elegan.
+          </p>
+          <a href="#" class="project-link" aria-label="Lihat detail proyek Website Portofolio Interaktif">
+            Detail Proyek
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+        <article tabindex="0" class="project-card" role="article" aria-label="Proyek Aplikasi Mobile React Native">
+          <h3 class="project-title">Aplikasi Mobile React Native</h3>
+          <p class="project-desc">
+            Mengembangkan aplikasi mobile lintas platform memakai React Native lengkap dengan fitur real-time dan antarmuka pengguna menawan.
+          </p>
+          <a href="#" class="project-link" aria-label="Lihat detail proyek Aplikasi Mobile React Native">
+            Detail Proyek
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience" aria-labelledby="heading-experience">
+      <h2 id="heading-experience">💼 Pengalaman Kerja</h2>
+      <article class="experience-item" tabindex="0">
+        <div class="exp-title">Software Developer - PT Teknologi Maju</div>
+        <div class="exp-duration">Januari 2024 - Sekarang</div>
+        <div class="exp-desc">
+          Bertanggung jawab mengembangkan dan memelihara aplikasi berbasis Java dan Python, berkolaborasi dengan tim desain dan QA untuk memastikan kualitas produk.
+        </div>
+      </article>
+      <article class="experience-item" tabindex="0">
+        <div class="exp-title">Web Developer Intern - Digital Media Corp</div>
+        <div class="exp-duration">Juli 2024 - Desember 2025</div>
+        <div class="exp-desc">
+          Membantu pengembangan website klien menggunakan HTML, CSS, dan JavaScript dengan fokus pada desain responsif dan interaktivitas.
+        </div>
+      </article>
+    </section>
+
+    <section class="education" aria-labelledby="heading-education">
+      <h2 id="heading-education">🎓 Pendidikan</h2>
+      <ul class="education-list" role="list">
+        <li role="listitem">SDN 115458 Pangkalan Lunang</li>
+        <li role="listitem">MTS Addarut Tauhid Pangkalan Lunang</li>
+        <li role="listitem">SMAS DI Panjaitan Tanjung Leidong</li>
+        <li role="listitem">Universitas Muhammadiyah Sumatera Utara Medan</li>
+      </ul>
+    </section>
+
+    <section class="contact" aria-labelledby="heading-contact">
+      <h2 id="heading-contact">📞 Kontak</h2>
+      <ul class="contact-list" role="list">
+        <li role="listitem" title="Nomor Telepon">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.5.74 3.83.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.75 20.62 3.38 13.25 3.38 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.33.26 2.64.74 3.83a1 1 0 01-.2 1.11l-2.2 2.2z"/></svg>
+          085361070955
+        </li>
+        <li role="listitem" title="Instagram">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5c0 2.07 1.68 3.75 3.75 3.75h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5c0-2.07-1.68-3.75-3.75-3.75h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.8-3.35a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+          @Freshhiu
+        </li>
+        <li role="listitem" title="Lokasi">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+          Medan, Indonesia
+        </li>
+        <li role="listitem" title="Jabatan">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 17v2a4 4 0 004 4h10a4 4 0 004-4v-2M12 12a5 5 0 100-10 5 5 0 000 10z"/></svg>
+          Full Stack Developer
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const circles = document.querySelectorAll('.skill-circle circle.progress');
+      const skillLevels = {
+        java: 92,
+        python: 88,
+        js: 83,
+        html: 97
+      };
+      circles.forEach(circle => {
+        const parent = circle.parentElement;
+        let percentage = 0;
+        if (parent.classList.contains('java')) percentage = skillLevels.java;
+        else if (parent.classList.contains('python')) percentage = skillLevels.python;
+        else if (parent.classList.contains('js')) percentage = skillLevels.js;
+        else if (parent.classList.contains('html')) percentage = skillLevels.html;
+
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = circumference;
+
+        setTimeout(() => {
+          const offset = circumference - (percentage / 100) * circumference;
+          circle.style.strokeDashoffset = offset;
+        }, 300);
+      });
+    });
+  </script>
+</body>
+</html>
